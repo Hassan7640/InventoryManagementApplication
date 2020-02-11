@@ -1,6 +1,5 @@
 package com.qa.persistence.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.qa.persistence.domain.Customer;

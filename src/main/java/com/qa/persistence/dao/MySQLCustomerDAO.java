@@ -16,11 +16,7 @@ import utils.Config;
 
 public class MySQLCustomerDAO implements DAO<Customer> {
 
-	//private Connection connection;
 
-//	public MySQLCustomerDAO() throws SQLException {
-//		this.connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", "root", "root");
-//	}
 	public static final Logger lOGGER = Logger.getLogger(MySQLCustomerDAO.class);
 	
 
@@ -62,9 +58,9 @@ public class MySQLCustomerDAO implements DAO<Customer> {
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password))
 			 {
 			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("UPDATE customer SET firstname= " + customer.getFirstName() + ", surname= "
-					+ customer.getSurname() + " WHERE id= " +customer.getId() + ";");
-			System.out.println("Uodate completed.");
+			stmt.executeUpdate("UPDATE customer SET firstname= '" + customer.getFirstName() + "', surname= '"
+					+ customer.getSurname() + "' WHERE id= " +customer.getId());
+			System.out.println("Update completed.");
 
 		} catch (Exception e) {
 			lOGGER.debug(e.getStackTrace());
@@ -77,7 +73,7 @@ return null;
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username,
 				Config.password)) {
 			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("DELETE from customer WHERE id =" + id);
+			stmt.executeUpdate("DELETE from customer WHERE id = " + id);
 			System.out.println("Delete completed");
 
 		} catch (Exception e) {
@@ -86,24 +82,4 @@ return null;
 		}
 
 	}
-
-	
-
-//	@Override
-//	public Long getCustId(Customer t) {
-//		// TODO Auto-generated method stub
-//		long id = 0;
-//		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password)){
-//			System.out.println("Database connected!");
-//			Statement statement = connection.createStatement();
-//			ResultSet resultSet = statement.executeQuery("SELECT id FROM customer WHERE firstname = " + t.getFirstName() + "surname = "+ t.getSurname());
-//			while (resultSet.next()) {
-//				id = resultSet.getLong("id");
-//			
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		return id;
-//	}
 }

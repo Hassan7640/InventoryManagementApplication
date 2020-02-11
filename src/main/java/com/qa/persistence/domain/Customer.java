@@ -3,18 +3,18 @@ package com.qa.persistence.domain;
 public class Customer {
 	
 	private Long id;
-	private String firstName;
-	private String surName;
+	private String firstname;
+	private String surname;
 	
-	public Customer(String firstName, String surName) {
-		this.firstName=firstName;
-		this.surName=surName;
+	public Customer(String firstname, String surname) {
+		this.firstname=firstname;
+		this.surname=surname;
 	}
 	
-	public Customer(Long id, String firstName,String surName ) {
+	public Customer(Long id, String firstname,String surname ) {
 		this.id=id;
-		this.firstName=firstName;
-		this.surName=surName;
+		this.firstname=firstname;
+		this.surname=surname;
 	}
 	public Long getId() {
 		return id;
@@ -24,20 +24,20 @@ public class Customer {
 	}
 
 	public String getFirstName() {
-		return firstName;
+		return firstname;
 	}
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+	public void setFirstName(String firstname) {
+		this.firstname = firstname;
 	}
 	public String getSurname() {
-		return surName;
+		return surname;
 	}
-	public void setSurname(String surName) {
-		this.surName = surName;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
 	
 	public String toString() {
-		return "id: "+ id+" first name: " +firstName+" surname: " +surName;
+		return "id: "+ id+" first name: " +firstname+" surname: " +surname;
 	}
 
 }

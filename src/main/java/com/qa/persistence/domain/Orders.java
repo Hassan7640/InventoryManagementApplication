@@ -30,7 +30,7 @@ public class Orders {
 	public float getOrder_cost() {
 		return order_cost;
 	}
-
+	
 	public void setOrder_cost(float order_cost) {
 		this.order_cost = order_cost;
 	}

@@ -7,37 +7,30 @@ import com.qa.persistence.domain.Customer;
 
 public class CustomerServices implements CrudServices <Customer>/*, CustomerId<Customer >*/ {
 	
-	DAO<Customer> customerDao;
+	DAO<Customer> customerDAO;
 	
-    public CustomerServices (DAO <Customer> customerDao) {
-    	this.customerDao = customerDao;
+    public CustomerServices (DAO <Customer> customerDAO) {
+    	this.customerDAO = customerDAO;
     }
     
     public Customer create (Customer customer) {
-     	return customerDao.create(customer);
+     	return customerDAO.create(customer);
     }
    
     public List <Customer> readAll(){
-    	return customerDao.readAll();
+    	return customerDAO.readAll();
     	
     }
   
     public Customer update ( Customer customer) {
-    	return customerDao.update( customer);
+    	return customerDAO.update( customer);
     }
     
     public void delete (Long id) {
-    	customerDao.delete(id);
+    	customerDAO.delete(id);
     }
 
-	
 }
 
 
-
-//	@Override
-//	public Long getCustId(Customer customer) {
-//		// TODO Auto-generated method stub
-//		return customerDao.getCustId(customer);
-//	}
 

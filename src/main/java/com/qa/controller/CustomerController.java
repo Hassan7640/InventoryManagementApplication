@@ -9,17 +9,15 @@ import com.qa.services.CrudServices;
 
 import utils.Utils;
 
-public class CustomerController implements CrudController<Customer> /* , CustomerIdController<Customer> */ {
+public class CustomerController implements CrudController<Customer> {
 
 	public static final Logger LOGGER = Logger.getLogger(CustomerController.class);
 
 	private CrudServices<Customer> customerServices;
 
-	// private CustomerId <Customer> getCustId;
 
-	public CustomerController(CrudServices<Customer> customerServices /* , CustomerId<Customer> getCustId */) {
+	public CustomerController(CrudServices<Customer> customerServices) {
 		this.customerServices = customerServices;
-		// this.getCustId=getCustId;
 	}
 
 	String getInput() {
@@ -27,11 +25,11 @@ public class CustomerController implements CrudController<Customer> /* , Custome
 	}
 
 	public Customer create() {
-		LOGGER.info("Please enter your first name");
-		String firstName = Utils.getInput();
+		LOGGER.info("Please enter your firstname");
+		String firstname = Utils.getInput();
 		LOGGER.info("Please enter your surname");
 		String surname = Utils.getInput();
-		Customer customer = customerServices.create(new Customer(firstName, surname));
+		Customer customer = customerServices.create(new Customer(firstname, surname));
 		LOGGER.info("Customer created");
 		return customer;
 	}
@@ -44,20 +42,18 @@ public class CustomerController implements CrudController<Customer> /* , Custome
 		}
 		return customers;
 	}
-
 	public Customer update() {
 		LOGGER.info("Please enter the id of the customer you would like to update ");
 		Long id = Long.valueOf(getInput());
 		LOGGER.info("Please enter your up-to-date firstname");
-		String firstName = Utils.getInput();
-		LOGGER.info("Please enter your up-to-date firstname");
+		String firstname = Utils.getInput();
+		LOGGER.info("Please enter your up-to-date surname");
 		String surname = Utils.getInput();
-		// long id =getCustId();
-		Customer customer = customerServices.update(new Customer(id, firstName, surname));
+		Customer customer = customerServices.update(new Customer(id, firstname, surname));
 		LOGGER.info("Customer updated");
 		return customer;
 	}
-
+	
 	public void delete() {
 		LOGGER.info("Please enter the id of the customer you would like to delete");
 		Long id = Long.valueOf(getInput());
