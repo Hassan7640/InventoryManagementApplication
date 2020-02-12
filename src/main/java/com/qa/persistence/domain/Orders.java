@@ -2,14 +2,19 @@ package com.qa.persistence.domain;
 
 public class Orders {
 	private Long id;
-	private Long customer_id;
+	private Long customerId;
+   	private Double orderCost;
+   	
+   	public Orders (Double orderCost, Long customerId) {
+		this.orderCost=orderCost;
+		this.customerId=customerId;
 
-
-	private float order_cost;
-	
-	public Orders (Long id, Long customer_id, float order_cost) {
+	}
+		
+	public Orders (Long id, Double orderCost, Long customerId) {
 		this.id=id;
-		this.order_cost=order_cost;
+		this.customerId=customerId;
+		this.orderCost=orderCost;
 	}
 	
 	public Long getId() {
@@ -20,25 +25,25 @@ public class Orders {
 		this.id = id;
 	}
 
-	public Long getCustomer_id() {
-		return customer_id;
+	public Long getCustomerId() {
+		return customerId;
 	}
 
-	public void setCustomer_id(Long customer_id) {
-		this.customer_id = customer_id;
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
 	}
-	public float getOrder_cost() {
-		return order_cost;
+	public  double getOrderCost() {
+		return orderCost;
 	}
 	
-	public void setOrder_cost(float order_cost) {
-		this.order_cost = order_cost;
+	public void setOrderCost(Double orderCost) {
+		this.orderCost = orderCost;
 	}
 
+	public String toString() {
+		return " id : " + id +  " orderCost: " + orderCost + " customerId: " + customerId;
+	}
 
-	
-
-	
 
 
 }

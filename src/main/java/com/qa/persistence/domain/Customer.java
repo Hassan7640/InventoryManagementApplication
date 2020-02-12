@@ -22,10 +22,10 @@ public class Customer {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 	public String getFirstName() {
 		return firstname;
 	}
+	
 	public void setFirstName(String firstname) {
 		this.firstname = firstname;
 	}
@@ -39,5 +39,4 @@ public class Customer {
 	public String toString() {
 		return "id: "+ id+" first name: " +firstname+" surname: " +surname;
 	}
-
 }

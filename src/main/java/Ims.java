@@ -3,11 +3,19 @@ import java.sql.SQLException;
 import org.apache.log4j.Logger;
 
 import com.qa.controller.Action;
-import com.qa.controller.CrudController;
+import com.qa.controller.CrudCustomerController;
+import com.qa.controller.CrudItemsController;
+import com.qa.controller.CrudOrdersController;
 import com.qa.controller.CustomerController;
+import com.qa.controller.ItemsController;
+import com.qa.controller.OrdersController;
 import com.qa.persistence.dao.MySQLCustomerDAO;
+import com.qa.persistence.dao.MySQLItemDAO;
+import com.qa.persistence.dao.MySQLOrderDAO;
 import com.qa.persistence.domain.Domain;
 import com.qa.services.CustomerServices;
+import com.qa.services.ItemServices;
+import com.qa.services.OrderServices;
 
 import utils.Config;
 import utils.Utils;
@@ -34,10 +42,17 @@ public class Ims {
 	   case CUSTOMER:
 		   CustomerController customerController = new CustomerController(new CustomerServices(new MySQLCustomerDAO()));
 		   doAction(customerController, action);
+		   break;
 	   case ITEM:
+		   ItemsController itemsController = new ItemsController(new ItemServices(new MySQLItemDAO()));
+		   doActionItems(itemsController, action);
 		   break;
 	   case ORDER:
+		   OrdersController ordersController = new OrdersController(new OrderServices(new MySQLOrderDAO()));
+		   doActionOrders(ordersController, action);
 		   break;
+//	   case ORDERITEM:
+//		    O
 	   case STOP:
 		   break;
 	   default:
@@ -45,7 +60,7 @@ public class Ims {
 	   }
    }
 
-	public void doAction(CrudController<?> crudController, Action action) {
+	public void doAction(CrudCustomerController<?> crudController,  Action action) {
 		switch (action) {
 		case CREATE:
 			crudController.create();
@@ -58,6 +73,48 @@ public class Ims {
 			break; 
 		case DELETE:
 			crudController.delete();
+			break;
+		case RETURN:
+			break;
+		 default:
+			 break;
+		}
+	}
+
+	public void doActionItems( CrudItemsController<?> itemController,  Action action) {
+		switch (action) {
+		case CREATE:
+			itemController.create();
+			break;
+		case READ:
+			itemController.readAll();
+			break;
+		case UPDATE:
+			itemController.update();
+			break; 
+		case DELETE:
+			itemController.delete();
+			break;
+		case RETURN:
+			break;
+		 default:
+			 break;
+		}
+	}
+	
+	public void doActionOrders( CrudOrdersController<?> ordersController,  Action action) {
+		switch (action) {
+		case CREATE:
+			ordersController.create();
+			break;
+		case READ:
+			ordersController.readAll();
+			break;
+		case UPDATE:
+			ordersController.update();
+			break; 
+		case DELETE:
+			ordersController.delete();
 			break;
 		case RETURN:
 			break;

@@ -2,14 +2,14 @@ package com.qa.services;
 
 import java.util.List;
 
-import com.qa.persistence.dao.DAO;
+import com.qa.persistence.dao.CustomerDAO;
 import com.qa.persistence.domain.Customer;
 
-public class CustomerServices implements CrudServices <Customer>/*, CustomerId<Customer >*/ {
+public class CustomerServices implements CrudCustomerServices <Customer>/*, CustomerId<Customer >*/ {
 	
-	DAO<Customer> customerDAO;
+	CustomerDAO<Customer> customerDAO;
 	
-    public CustomerServices (DAO <Customer> customerDAO) {
+    public CustomerServices (CustomerDAO <Customer> customerDAO) {
     	this.customerDAO = customerDAO;
     }
     
@@ -29,7 +29,6 @@ public class CustomerServices implements CrudServices <Customer>/*, CustomerId<C
     public void delete (Long id) {
     	customerDAO.delete(id);
     }
-
 }
 
 

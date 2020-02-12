@@ -5,7 +5,7 @@ import java.util.List;
 import com.qa.persistence.domain.Customer;
 
 
-public interface DAO<T>{
+public interface CustomerDAO<T>{
 	
 	 Customer create(Customer customer);
 	

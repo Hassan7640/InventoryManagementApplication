@@ -30,6 +30,7 @@ public enum Action {
 			LOGGER.info(action.description());
 		}
 	}
+
 	public static Action getAction() {
 		Action action;
 		

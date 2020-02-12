@@ -9,6 +9,7 @@ public enum Domain {
 	CUSTOMER("Information about customers"), 
 	ITEM("Individual Items"),
 	ORDER("Purchases of items"), 
+	ORDERITEM("link orders with the items"),
 	STOP("To close the application");
 
 	public static final Logger LOGGER = Logger.getLogger(Domain.class);
@@ -28,6 +29,7 @@ public enum Domain {
 			LOGGER.info(domain.description());
 		}
 	}
+
 	public static Domain getDomain() {
 		Domain domain;
 		while (true) {
@@ -40,5 +42,4 @@ public enum Domain {
 		}
 		return domain;
 	}
-
 }

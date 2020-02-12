@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.qa.persistence.domain.Customer;
 
-public interface CrudController <T>{
+public interface CrudCustomerController <T>{
 
 	Customer create ();
 	

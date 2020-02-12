@@ -5,18 +5,18 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import com.qa.persistence.domain.Customer;
-import com.qa.services.CrudServices;
+import com.qa.services.CrudCustomerServices;
 
 import utils.Utils;
 
-public class CustomerController implements CrudController<Customer> {
+public class CustomerController implements CrudCustomerController<Customer> {
 
 	public static final Logger LOGGER = Logger.getLogger(CustomerController.class);
 
-	private CrudServices<Customer> customerServices;
+	private CrudCustomerServices<Customer> customerServices;
 
 
-	public CustomerController(CrudServices<Customer> customerServices) {
+	public CustomerController(CrudCustomerServices<Customer> customerServices) {
 		this.customerServices = customerServices;
 	}
 
@@ -42,6 +42,7 @@ public class CustomerController implements CrudController<Customer> {
 		}
 		return customers;
 	}
+
 	public Customer update() {
 		LOGGER.info("Please enter the id of the customer you would like to update ");
 		Long id = Long.valueOf(getInput());
@@ -53,7 +54,6 @@ public class CustomerController implements CrudController<Customer> {
 		LOGGER.info("Customer updated");
 		return customer;
 	}
-	
 	public void delete() {
 		LOGGER.info("Please enter the id of the customer you would like to delete");
 		Long id = Long.valueOf(getInput());
