@@ -39,7 +39,7 @@ public class Ims {
 	   
 	   Domain domain = Domain.getDomain();
 	   LOGGER.info("What would you like to do with " + domain.name().toLowerCase() + ":");
-	   
+	    
 	   Action.printAction();
 	   Action action = Action.getAction();
 	   
