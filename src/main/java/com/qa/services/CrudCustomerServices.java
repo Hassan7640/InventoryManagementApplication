@@ -6,7 +6,7 @@ import com.qa.persistence.domain.Customer;
 
 public interface CrudCustomerServices<T> {
 
-	Customer create(T t);
+	Customer create(Customer customer);
 
 	public List<T> readAll();
 

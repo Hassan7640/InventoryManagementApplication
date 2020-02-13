@@ -6,15 +6,23 @@ public class Items {
 	
 	private String itemName;
 	
+
+	private Long itemQuantity;
 	private double itemValue;
+	public Items( Long id) {
+		
+		
+		this.id=id;
+	}
+
 	
 	public Items( String itemName, Double itemValue) {
-		
+//		this.itemQuantity=itemQuantity;
 		this.itemName=itemName;
 		this.itemValue=itemValue;
 	}
 
-	
+	 
 	public Items(Long id, String itemName, Double itemValue) {
 		this.id=id;
 		this.itemName=itemName;
@@ -28,13 +36,22 @@ public class Items {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
+	
 	public String getItemName() {
 		return itemName;
 	}
 
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
+	}
+	
+	public Long getItemQuantity() {
+		return itemQuantity;
+	}
+
+
+	public void setItemQuantity(Long itemQuantity) {
+		this.itemQuantity = itemQuantity;
 	}
 
 	public double getItemValue() {
@@ -48,5 +65,4 @@ public class Items {
 	public String toString() {
 		return "id: " +id + " itemName: " +itemName+ " itemValue: " + itemValue;
 	}
-
 }

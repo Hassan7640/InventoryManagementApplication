@@ -19,18 +19,31 @@ public class MySQLItemDAO implements ItemDAO<Items> {
 public static final Logger lOGGER = Logger.getLogger(MySQLCustomerDAO.class);
 	
 
-	public Items create(Items item) {
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password)){
-				 
-			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("insert into item(item_name, item_value) values('" + item.getItemName() + "','" + item.getItemValue()+"')");
-			System.out.println("Insert complete.");
-		} catch (SQLException e) {
-			lOGGER.debug(e.getStackTrace());
-			lOGGER.error(e.getMessage());
-		}
-		return null;
-	}
+//	public Items create(Items item) {
+//		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password)){
+//				 
+//			Statement stmt = connection.createStatement();
+//			stmt.executeUpdate("insert into item(item_name, item_value) values('" + item.getItemName() + "','" + item.getItemValue()+"')");
+//			System.out.println("Insert complete.");
+//		} catch (SQLException e) {
+//			lOGGER.debug(e.getStackTrace());
+//			lOGGER.error(e.getMessage());
+//		}
+//		return null;
+//	}
+
+public Items create(Items item) {
+try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password)){
+		 
+	Statement stmt = connection.createStatement();
+	stmt.executeUpdate("insert into item(item_name, item_value) values('" + item.getItemName() + "','" + item.getItemValue()+ "')");
+	System.out.println("Insert complete.");
+} catch (SQLException e) {
+	lOGGER.debug(e.getStackTrace());
+	lOGGER.error(e.getMessage());
+}
+return null;
+}
 
 	public ArrayList<Items> readAll() {
 		ArrayList<Items> items = new ArrayList<Items>();
@@ -53,14 +66,13 @@ public static final Logger lOGGER = Logger.getLogger(MySQLCustomerDAO.class);
 		
 		return items;
 	}
-	
+	 
 	public Items update(Items item) {
 
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password))
 			 {
 			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("UPDATE item SET item_name= '" + item.getItemName() + "', item_value= '"
-					+ item.getItemValue() + "' WHERE id= " + item.getId());
+			stmt.executeUpdate("UPDATE item SET item_name ='" + item.getItemName() + "', item_value ='" + item.getItemValue() + "' WHERE id = " + item.getId());
 			System.out.println("Update completed.");
 
 		} catch (Exception e) {
@@ -81,8 +93,26 @@ return null;
 			lOGGER.debug(e.getStackTrace());
 			lOGGER.error(e.getMessage());
 		}
-
 	}
+	
+//	public Double getItemPrice(Items item) {
+//		Double itemValue=0.00;
+//		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username,
+//				Config.password)) {
+//			Statement statement = connection.createStatement();
+//			ResultSet resultSet = statement.executeQuery("select item_value from item where id="+item.getId());
+//			while (resultSet.next()) {
+//			   itemValue = resultSet.getDouble("item_value");
+//			}
+//			
+//
+//			
+//		}catch(Exception e) {
+//			
+//		}
+//		return itemValue;
+//	}
+	
 
 
 }

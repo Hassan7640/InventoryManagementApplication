@@ -30,11 +30,13 @@ public class ItemsController implements CrudItemsController<Items>{
 		String item = Utils.getInput();
 		LOGGER.info("Please enter your value");
 		Double value = Double.parseDouble(Utils.getInput()) ;
+//		LOGGER.info("Please enter your item quantity");
+//		Long quantity = Long.valueOf(getInput());
 		Items items = itemsServices.create(new Items(item, value));
 		LOGGER.info("item created");
 		return items;
 	}
-	
+ 	
 	public List<Items> readAll() {
 		List<Items> items = itemsServices.readAll();
 		for (Items item : items) {
@@ -46,15 +48,17 @@ public class ItemsController implements CrudItemsController<Items>{
 	public Items update() {
 		LOGGER.info("Please enter the id of the item you would like to update ");
 		Long id = Long.valueOf(getInput());
-		LOGGER.info("Please enter your up-to-date item");
+		LOGGER.info("Please enter your new item");
 		String item = Utils.getInput();
-		LOGGER.info("Please enter your up-to-date value");
-		Double value = Double.parseDouble(Utils.getInput());
-		Items items = itemsServices.update(new Items(id, item, value));
+		LOGGER.info("Please enter your new value");
+		Double itemValue =Double.parseDouble(Utils.getInput()) ;
+//		LOGGER.info("Please enter your new item quantity");
+//		Long value = Long.valueOf(getInput());
+		Items items = itemsServices.update(new Items(id, item, itemValue));
 		LOGGER.info("item updated");
 		return items;
 	}
-
+   
 	public void delete() {
 		LOGGER.info("Please enter the id of the item you would like to delete");
 		Long id = Long.valueOf(getInput());

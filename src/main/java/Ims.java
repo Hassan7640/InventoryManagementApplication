@@ -5,16 +5,21 @@ import org.apache.log4j.Logger;
 import com.qa.controller.Action;
 import com.qa.controller.CrudCustomerController;
 import com.qa.controller.CrudItemsController;
+import com.qa.controller.CrudOrderItemController;
 import com.qa.controller.CrudOrdersController;
 import com.qa.controller.CustomerController;
 import com.qa.controller.ItemsController;
+import com.qa.controller.OrderItemController;
 import com.qa.controller.OrdersController;
+//import com.qa.controller.OrdersController;
 import com.qa.persistence.dao.MySQLCustomerDAO;
 import com.qa.persistence.dao.MySQLItemDAO;
 import com.qa.persistence.dao.MySQLOrderDAO;
+import com.qa.persistence.dao.MySQLOrderItemDAO;
 import com.qa.persistence.domain.Domain;
 import com.qa.services.CustomerServices;
 import com.qa.services.ItemServices;
+import com.qa.services.OrderItemServices;
 import com.qa.services.OrderServices;
 
 import utils.Config;
@@ -51,14 +56,18 @@ public class Ims {
 		   OrdersController ordersController = new OrdersController(new OrderServices(new MySQLOrderDAO()));
 		   doActionOrders(ordersController, action);
 		   break;
-//	   case ORDERITEM:
-//		    O
+	   case ORDERITEM:
+		    OrderItemController orderItemController = new OrderItemController(new OrderItemServices(new MySQLOrderItemDAO()));
+		    doActionOrdersItem(orderItemController,action);
+		    break;
 	   case STOP:
 		   break;
 	   default:
 		   break;
 	   }
    }
+
+
 
 	public void doAction(CrudCustomerController<?> crudController,  Action action) {
 		switch (action) {
@@ -121,5 +130,27 @@ public class Ims {
 		 default:
 			 break;
 		}
+	}
+	
+	private void doActionOrdersItem(CrudOrderItemController<?> orderItemController, Action action) {
+		switch (action) {
+		case CREATE:
+			orderItemController.create();
+			break;
+		case READ:
+			orderItemController.readAll();
+			break;
+		case UPDATE:
+			orderItemController.update();
+			break; 
+		case DELETE:
+			orderItemController.delete();
+			break;
+		case RETURN:
+			break;
+		 default:
+			 break;
+		}
+		
 	}
 }

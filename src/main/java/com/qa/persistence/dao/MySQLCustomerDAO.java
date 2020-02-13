@@ -32,7 +32,7 @@ public class MySQLCustomerDAO implements CustomerDAO<Customer> {
 		}
 		return null;
 	}
-
+ 
 	public ArrayList<Customer> readAll() {
 		ArrayList<Customer> customers = new ArrayList<Customer>();
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password)){
@@ -59,7 +59,7 @@ public class MySQLCustomerDAO implements CustomerDAO<Customer> {
 			 {
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("UPDATE customer SET firstname= '" + customer.getFirstName() + "', surname= '"
-					+ customer.getSurname() + "' WHERE id= " +customer.getId());
+					+ customer.getSurname() + "' WHERE id = " +customer.getId());
 			System.out.println("Update completed.");
 
 		} catch (Exception e) {
@@ -68,7 +68,7 @@ public class MySQLCustomerDAO implements CustomerDAO<Customer> {
 		}
 return null;
 	}
-
+ 
 	public void delete(long id) {
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username,
 				Config.password)) {

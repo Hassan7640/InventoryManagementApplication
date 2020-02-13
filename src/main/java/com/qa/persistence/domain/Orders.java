@@ -28,7 +28,7 @@ public class Orders {
 	public Long getCustomerId() {
 		return customerId;
 	}
-
+ 
 	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
@@ -44,6 +44,6 @@ public class Orders {
 		return " id : " + id +  " orderCost: " + orderCost + " customerId: " + customerId;
 	}
 
-
+ 
 
 }

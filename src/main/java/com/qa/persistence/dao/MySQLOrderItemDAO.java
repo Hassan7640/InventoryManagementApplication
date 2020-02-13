@@ -9,24 +9,19 @@ import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
-import com.qa.persistence.domain.Orders;
+import com.qa.persistence.domain.OrderItems;
 
 import utils.Config;
 
-public class MySQLOrderDAO  implements OrderDAO<Orders>{
+public class MySQLOrderItemDAO implements OrderItemDAO<OrderItems>{
 
-	
-//	public MySQLOrderDAO() throws SQLException {
-//		this.connection=  DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", "root", "root");
-//	}
-//	
-	public static final Logger lOGGER = Logger.getLogger(MySQLOrderDAO.class);
+	public static final Logger lOGGER = Logger.getLogger(MySQLOrderItemDAO.class);
 
-	public Orders create(Orders order) {
+	public OrderItems create(OrderItems orderItem) {
 		
 		try(Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", "root", "root")){
 			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("INSERT INTO orders(order_cost, customer_id) VALUES (' "+order.getOrderCost()+ "','" + order.getCustomerId()+ "')");
+			stmt.executeUpdate("INSERT INTO itemsorder(order_id, item_id) VALUES (' "/*+orderItem.getItemOrdered()+ "','" +orderItem.getItemQuantity() + "','"*/ +orderItem.getOrderId()+ "','" +orderItem.getItemId()+ "')");
 			System.out.println("insert complete");
 		}catch (SQLException e) {
 			lOGGER.debug(e.getStackTrace());
@@ -37,17 +32,19 @@ public class MySQLOrderDAO  implements OrderDAO<Orders>{
 		
 	}
 	
-	public ArrayList<Orders> readAll() {
-		ArrayList<Orders> orders = new ArrayList<Orders>();
+	public ArrayList<OrderItems> readAll() {
+		ArrayList<OrderItems> orders = new ArrayList<OrderItems>();
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password)){
 			System.out.println("Database connected!");
 			Statement statement = connection.createStatement();
-			ResultSet resultSet = statement.executeQuery("select * from orders");
+			ResultSet resultSet = statement.executeQuery("select * from itemsorder");
 			while (resultSet.next()) {
 				Long id = resultSet.getLong("id");
-				Double orderCost = resultSet.getDouble("order_cost");
-				Long customerId = resultSet.getLong("customer_id");
-				Orders order =new Orders(id, orderCost, customerId);
+//				String itemOrder = resultSet.getString("item_ordered");
+//				Long itemQuantity = resultSet.getLong("quantity");
+				Long orderId = resultSet.getLong("order_id");
+				Long itemId = resultSet.getLong("item_id");
+				OrderItems order =new OrderItems(id,/*itemOrder,itemQuantity,*/ orderId, itemId);
 				orders.add(order);
 			}
 		} catch (SQLException e) {
@@ -58,12 +55,12 @@ public class MySQLOrderDAO  implements OrderDAO<Orders>{
 		
 	}
 
-	public Orders update(Orders order) {
+	public OrderItems update(OrderItems orderItem) {
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username,
 				Config.password)) {
 			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("UPDATE items SET order_cost = '" + order.getOrderCost() + "', customer_id= '"
-					+ order.getCustomerId() + "' WHERE id= " + order.getId());
+			stmt.executeUpdate("UPDATE itemsorder SET item_ordered = '"/* + orderItem.getItemOrdered() + "', quantity= '"
+					+ orderItem.getItemQuantity() + "', order_id= '"*/+orderItem.getOrderId()+ "', item_id= '" +orderItem.getItemId()+"' WHERE id= " + orderItem.getId());
 			System.out.println("Update completed.");
 
 		} catch (Exception e) {
@@ -78,7 +75,7 @@ public class MySQLOrderDAO  implements OrderDAO<Orders>{
 		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username,
 				Config.password)) {
 			Statement stmt = connection.createStatement();
-			stmt.executeUpdate("DELETE from orders WHERE id = " + id);
+			stmt.executeUpdate("DELETE from itemsorder WHERE id = " + id);
 			System.out.println("Delete completed");
 
 		} catch (Exception e) {
@@ -87,7 +84,4 @@ public class MySQLOrderDAO  implements OrderDAO<Orders>{
 		}
 		
 	}
-
-
- 
 }

@@ -20,10 +20,10 @@ public class CustomerController implements CrudCustomerController<Customer> {
 		this.customerServices = customerServices;
 	}
 
-	String getInput() {
+	public String getInput() {
 		return Utils.getInput();
 	}
-
+ 
 	public Customer create() {
 		LOGGER.info("Please enter your firstname");
 		String firstname = Utils.getInput();
@@ -33,7 +33,7 @@ public class CustomerController implements CrudCustomerController<Customer> {
 		LOGGER.info("Customer created");
 		return customer;
 	}
-
+	
 	public List<Customer> readAll() {
 		List<Customer> customers = customerServices.readAll();
 		for (Customer customer : customers) {
@@ -54,6 +54,7 @@ public class CustomerController implements CrudCustomerController<Customer> {
 		LOGGER.info("Customer updated");
 		return customer;
 	}
+	
 	public void delete() {
 		LOGGER.info("Please enter the id of the customer you would like to delete");
 		Long id = Long.valueOf(getInput());
