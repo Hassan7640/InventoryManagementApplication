@@ -21,8 +21,7 @@ public class MySQLCustomerDAO implements CustomerDAO<Customer> {
 	
 
 	public Customer create(Customer customer) {
-		try {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password);
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password)){
 				 
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("insert into customer(firstname, surname) values('" + customer.getFirstName() + "','" + customer.getSurname()+"')");
@@ -36,8 +35,7 @@ public class MySQLCustomerDAO implements CustomerDAO<Customer> {
  
 	public ArrayList<Customer> readAll() {
 		ArrayList<Customer> customers = new ArrayList<Customer>();
-		try {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password);
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password)){
 			System.out.println("Database connected!");
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery("select * from customer");
@@ -57,9 +55,8 @@ public class MySQLCustomerDAO implements CustomerDAO<Customer> {
 	}
 	public Customer update(Customer customer) {
 
-		try {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password);
-			 
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password))
+			 {
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("UPDATE customer SET firstname= '" + customer.getFirstName() + "', surname= '"
 					+ customer.getSurname() + "' WHERE id = " +customer.getId());
@@ -73,9 +70,8 @@ return null;
 	}
  
 	public void delete(long id) {
-		try {
-		Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username,
-				Config.password);
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username,
+				Config.password)) {
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("DELETE from customer WHERE id = " + id);
 			System.out.println("Delete completed");
