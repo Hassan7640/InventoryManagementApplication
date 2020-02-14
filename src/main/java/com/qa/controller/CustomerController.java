@@ -23,7 +23,9 @@ public class CustomerController implements CrudCustomerController<Customer> {
 	public String getInput() {
 		return Utils.getInput();
 	}
- 
+   /**
+    * Creates a customer by taking in user input
+    */
 	public Customer create() {
 		LOGGER.info("Please enter your firstname");
 		String firstname = Utils.getInput();
@@ -34,6 +36,9 @@ public class CustomerController implements CrudCustomerController<Customer> {
 		return customer;
 	}
 	
+/**
+ * Reads all customers to the logger
+ */
 	public List<Customer> readAll() {
 		List<Customer> customers = customerServices.readAll();
 		for (Customer customer : customers) {
@@ -42,7 +47,10 @@ public class CustomerController implements CrudCustomerController<Customer> {
 		}
 		return customers;
 	}
- 
+  
+	/**
+	 * Updates an existing customer by taking in user input
+	 */
 	public Customer update() {
 		LOGGER.info("Please enter the id of the customer you would like to update ");
 		Long id = Long.valueOf(getInput());
@@ -55,6 +63,9 @@ public class CustomerController implements CrudCustomerController<Customer> {
 		return customer;
 	}
 	
+	/**
+	 * Deletes an existing customer by an id of the customer
+	 */
 	public void delete() {
 		LOGGER.info("Please enter the id of the customer you would like to delete");
 		Long id = Long.valueOf(getInput());

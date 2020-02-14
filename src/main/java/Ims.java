@@ -43,7 +43,7 @@ public class Ims {
 	   Action.printAction();
 	   Action action = Action.getAction();
 	   
-	   switch (domain) {
+	   switch (domain) { 
 	   case CUSTOMER:
 		   CustomerController customerController = new CustomerController(new CustomerServices(new MySQLCustomerDAO()));
 		   doAction(customerController, action);
@@ -66,7 +66,7 @@ public class Ims {
 		   break;
 	   }
    }
-
+ 
 
 
 	public void doAction(CrudCustomerController<?> crudController,  Action action) {

@@ -7,21 +7,21 @@ public class Items {
 	private String itemName;
 	
 
-	private Long itemQuantity;
-	private double itemValue;
-	public Items( Long id) {
-		
-		
-		this.id=id;
-	}
+	private Double itemValue;
+//	public Items( Long id) {
+//		
+//		
+//		this.id=id;
+//	}
 
 	
-	public Items( String itemName, Double itemValue) {
+	public Items(String itemName, Double itemValue) {
 //		this.itemQuantity=itemQuantity;
 		this.itemName=itemName;
 		this.itemValue=itemValue;
 	}
 
+	
 	 
 	public Items(Long id, String itemName, Double itemValue) {
 		this.id=id;
@@ -45,15 +45,7 @@ public class Items {
 		this.itemName = itemName;
 	}
 	
-	public Long getItemQuantity() {
-		return itemQuantity;
-	}
-
-
-	public void setItemQuantity(Long itemQuantity) {
-		this.itemQuantity = itemQuantity;
-	}
-
+	
 	public double getItemValue() {
 		return itemValue;
 	}

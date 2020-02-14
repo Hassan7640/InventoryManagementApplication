@@ -33,7 +33,7 @@ public static final Logger lOGGER = Logger.getLogger(MySQLCustomerDAO.class);
 //	}
  
 public Items create(Items item) {
-try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/ims", Config.username, Config.password)){
+try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/inventory", Config.username, Config.password)){
 		 
 	Statement stmt = connection.createStatement();
 	stmt.executeUpdate("insert into item(item_name, item_value) values('" + item.getItemName() + "','" + item.getItemValue()+ "')");
@@ -47,7 +47,7 @@ return null;
 
 	public ArrayList<Items> readAll() {
 		ArrayList<Items> items = new ArrayList<Items>();
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/ims", Config.username, Config.password)){
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/inventory", Config.username, Config.password)){
 			System.out.println("Database connected!");
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery("select * from item");
@@ -69,7 +69,7 @@ return null;
 	 
 	public Items update(Items item) {
 
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/ims", Config.username, Config.password))
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/inventory", Config.username, Config.password))
 			 {
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("UPDATE item SET item_name ='" + item.getItemName() + "', item_value ='" + item.getItemValue() + "' WHERE id = " + item.getId());
@@ -80,10 +80,10 @@ return null;
 			lOGGER.error(e.getMessage());
 		}
 return null;
-	}
+	} 
 	
 	public void delete(long id) {
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/ims", Config.username,
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/inventory", Config.username,
 				Config.password)) {
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("DELETE from item WHERE id = " + id);

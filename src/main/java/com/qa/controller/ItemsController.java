@@ -22,7 +22,7 @@ public class ItemsController implements CrudItemsController<Items>{
 
 	public String getInput() {
 		return Utils.getInput();
-	}
+	} 
 
 	public Items create() {
 		LOGGER.info("Please enter your item");

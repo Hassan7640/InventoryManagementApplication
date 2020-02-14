@@ -24,7 +24,7 @@ public class MySQLOrderDAO  implements OrderDAO<Orders>{
 
 	public Orders create(Orders order) {
 		
-		try(Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", "root", "root")){
+		try(Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/inventory", Config.username, Config.password)){
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("INSERT INTO orders(order_cost, customer_id) VALUES (' "+order.getOrderCost()+ "','" + order.getCustomerId()+ "')");
 			System.out.println("insert complete");
@@ -39,7 +39,7 @@ public class MySQLOrderDAO  implements OrderDAO<Orders>{
 	
 	public ArrayList<Orders> readAll() {
 		ArrayList<Orders> orders = new ArrayList<Orders>();
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql:///ims", Config.username, Config.password)){
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/inventory", Config.username, Config.password)){
 			System.out.println("Database connected!");
 			Statement statement = connection.createStatement();
 			ResultSet resultSet = statement.executeQuery("select * from orders");
@@ -59,7 +59,7 @@ public class MySQLOrderDAO  implements OrderDAO<Orders>{
 	}
 
 	public Orders update(Orders order) {
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username,
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/inventory", Config.username,
 				Config.password)) {
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("UPDATE items SET order_cost = '" + order.getOrderCost() + "', customer_id= '"
@@ -75,7 +75,7 @@ public class MySQLOrderDAO  implements OrderDAO<Orders>{
 	
 
 	public void delete(long id) {
-		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username,
+		try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.14.13:3306/inventory", Config.username,
 				Config.password)) {
 			Statement stmt = connection.createStatement();
 			stmt.executeUpdate("DELETE from orders WHERE id = " + id);
