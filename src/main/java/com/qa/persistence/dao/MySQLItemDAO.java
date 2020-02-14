@@ -31,7 +31,7 @@ public static final Logger lOGGER = Logger.getLogger(MySQLCustomerDAO.class);
 //		}
 //		return null;
 //	}
-
+ 
 public Items create(Items item) {
 try (Connection connection = DriverManager.getConnection("jdbc:mysql://34.89.115.165:3306/ims", Config.username, Config.password)){
 		 

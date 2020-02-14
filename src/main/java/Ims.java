@@ -30,9 +30,9 @@ public class Ims {
 
 	public void imventoryManagementSystem() throws SQLException {
 	   LOGGER.info("What is your username");
-	   Config.username= Utils.getInput();
+	   String username= Utils.getInput();
 	   LOGGER.info("What is your password");
-	   Config.password= Utils.getInput();
+	   String password= Utils.getInput();
 	  
 	   LOGGER.info("Which entity would you like to use?");
 	   Domain.printDomains();
@@ -45,7 +45,7 @@ public class Ims {
 	   
 	   switch (domain) {
 	   case CUSTOMER:
-		   CustomerController customerController = new CustomerController(new CustomerServices(new MySQLCustomerDAO()));
+		   CustomerController customerController = new CustomerController(new CustomerServices(new MySQLCustomerDAO(username,password)));
 		   doAction(customerController, action);
 		   break;
 	   case ITEM:
