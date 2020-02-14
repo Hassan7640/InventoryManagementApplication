@@ -1,0 +1,91 @@
+2020-02-14 10:03:03 INFO  Ims:32 - What is your username
+2020-02-14 10:03:18 INFO  Ims:32 - What is your username
+2020-02-14 10:03:54 INFO  Ims:32 - What is your username
+2020-02-14 10:07:38 INFO  Ims:32 - What is your username
+2020-02-14 10:07:44 INFO  Ims:34 - What is your password
+2020-02-14 10:07:49 INFO  Ims:37 - Which entity would you like to use?
+2020-02-14 10:07:49 INFO  Domain:29 - CUSTOMER : Information about customers
+2020-02-14 10:07:49 INFO  Domain:29 - ITEM : Individual Items
+2020-02-14 10:07:49 INFO  Domain:29 - ORDER : Purchases of items
+2020-02-14 10:07:49 INFO  Domain:29 - ORDERITEM : link orders with the items
+2020-02-14 10:07:49 INFO  Domain:29 - STOP : To close the application
+2020-02-14 10:08:12 INFO  Ims:41 - What would you like to do with customer:
+2020-02-14 10:08:12 INFO  Action:30 - To save a new item into the database:To save a new item into the database
+2020-02-14 10:08:12 INFO  Action:30 - To read an item from the database:To read an item from the database
+2020-02-14 10:08:12 INFO  Action:30 - To change an item already in the database:To change an item already in the database
+2020-02-14 10:08:12 INFO  Action:30 - To remove an item from the database:To remove an item from the database
+2020-02-14 10:08:12 INFO  Action:30 - To return to domain selection:To return to domain selection
+2020-02-14 10:08:15 INFO  CustomerController:28 - Please enter your firstname
+2020-02-14 10:08:19 INFO  CustomerController:30 - Please enter your surname
+2020-02-14 10:08:21 ERROR MySQLCustomerDAO:31 - Access denied for user ''@'164.39.75.108' (using password: NO)
+2020-02-14 10:08:21 INFO  CustomerController:33 - Customer created
+2020-02-14 10:13:38 INFO  Ims:32 - What is your username
+2020-02-14 10:13:45 INFO  Ims:34 - What is your password
+2020-02-14 10:13:52 INFO  Ims:37 - Which entity would you like to use?
+2020-02-14 10:13:52 INFO  Domain:29 - CUSTOMER : Information about customers
+2020-02-14 10:13:52 INFO  Domain:29 - ITEM : Individual Items
+2020-02-14 10:13:52 INFO  Domain:29 - ORDER : Purchases of items
+2020-02-14 10:13:52 INFO  Domain:29 - ORDERITEM : link orders with the items
+2020-02-14 10:13:52 INFO  Domain:29 - STOP : To close the application
+2020-02-14 10:13:55 INFO  Ims:41 - What would you like to do with customer:
+2020-02-14 10:13:55 INFO  Action:30 - To save a new item into the database:To save a new item into the database
+2020-02-14 10:13:55 INFO  Action:30 - To read an item from the database:To read an item from the database
+2020-02-14 10:13:55 INFO  Action:30 - To change an item already in the database:To change an item already in the database
+2020-02-14 10:13:55 INFO  Action:30 - To remove an item from the database:To remove an item from the database
+2020-02-14 10:13:55 INFO  Action:30 - To return to domain selection:To return to domain selection
+2020-02-14 10:13:58 INFO  CustomerController:28 - Please enter your firstname
+2020-02-14 10:14:02 INFO  CustomerController:30 - Please enter your surname
+2020-02-14 10:14:05 ERROR MySQLCustomerDAO:31 - Access denied for user ''@'164.39.75.108' (using password: NO)
+2020-02-14 10:14:05 INFO  CustomerController:33 - Customer created
+2020-02-14 10:15:36 INFO  Ims:32 - What is your username
+2020-02-14 10:15:39 INFO  Ims:34 - What is your password
+2020-02-14 10:15:43 INFO  Ims:37 - Which entity would you like to use?
+2020-02-14 10:15:43 INFO  Domain:29 - CUSTOMER : Information about customers
+2020-02-14 10:15:43 INFO  Domain:29 - ITEM : Individual Items
+2020-02-14 10:15:43 INFO  Domain:29 - ORDER : Purchases of items
+2020-02-14 10:15:43 INFO  Domain:29 - ORDERITEM : link orders with the items
+2020-02-14 10:15:43 INFO  Domain:29 - STOP : To close the application
+2020-02-14 10:15:48 INFO  Ims:41 - What would you like to do with customer:
+2020-02-14 10:15:48 INFO  Action:30 - To save a new item into the database:To save a new item into the database
+2020-02-14 10:15:48 INFO  Action:30 - To read an item from the database:To read an item from the database
+2020-02-14 10:15:48 INFO  Action:30 - To change an item already in the database:To change an item already in the database
+2020-02-14 10:15:48 INFO  Action:30 - To remove an item from the database:To remove an item from the database
+2020-02-14 10:15:48 INFO  Action:30 - To return to domain selection:To return to domain selection
+2020-02-14 10:15:55 INFO  CustomerController:28 - Please enter your firstname
+2020-02-14 10:15:59 INFO  CustomerController:30 - Please enter your surname
+2020-02-14 10:16:00 ERROR MySQLCustomerDAO:31 - Access denied for user ''@'164.39.75.108' (using password: NO)
+2020-02-14 10:16:00 INFO  CustomerController:33 - Customer created
+2020-02-14 10:29:59 INFO  Ims:32 - What is your username
+2020-02-14 10:30:01 INFO  Ims:34 - What is your password
+2020-02-14 10:30:06 INFO  Ims:37 - Which entity would you like to use?
+2020-02-14 10:30:06 INFO  Domain:29 - CUSTOMER : Information about customers
+2020-02-14 10:30:06 INFO  Domain:29 - ITEM : Individual Items
+2020-02-14 10:30:06 INFO  Domain:29 - ORDER : Purchases of items
+2020-02-14 10:30:06 INFO  Domain:29 - ORDERITEM : link orders with the items
+2020-02-14 10:30:06 INFO  Domain:29 - STOP : To close the application
+2020-02-14 10:30:13 INFO  Ims:41 - What would you like to do with item:
+2020-02-14 10:30:13 INFO  Action:30 - To save a new item into the database:To save a new item into the database
+2020-02-14 10:30:13 INFO  Action:30 - To read an item from the database:To read an item from the database
+2020-02-14 10:30:13 INFO  Action:30 - To change an item already in the database:To change an item already in the database
+2020-02-14 10:30:13 INFO  Action:30 - To remove an item from the database:To remove an item from the database
+2020-02-14 10:30:13 INFO  Action:30 - To return to domain selection:To return to domain selection
+2020-02-14 10:30:17 INFO  ItemsController:28 - Please enter your item
+2020-02-14 10:30:24 INFO  ItemsController:30 - Please enter your value
+2020-02-14 10:30:27 INFO  ItemsController:35 - item created
+2020-02-14 10:30:36 INFO  Ims:32 - What is your username
+2020-02-14 10:30:39 INFO  Ims:34 - What is your password
+2020-02-14 10:30:43 INFO  Ims:37 - Which entity would you like to use?
+2020-02-14 10:30:43 INFO  Domain:29 - CUSTOMER : Information about customers
+2020-02-14 10:30:43 INFO  Domain:29 - ITEM : Individual Items
+2020-02-14 10:30:43 INFO  Domain:29 - ORDER : Purchases of items
+2020-02-14 10:30:43 INFO  Domain:29 - ORDERITEM : link orders with the items
+2020-02-14 10:30:43 INFO  Domain:29 - STOP : To close the application
+2020-02-14 10:30:46 INFO  Ims:41 - What would you like to do with customer:
+2020-02-14 10:30:46 INFO  Action:30 - To save a new item into the database:To save a new item into the database
+2020-02-14 10:30:46 INFO  Action:30 - To read an item from the database:To read an item from the database
+2020-02-14 10:30:46 INFO  Action:30 - To change an item already in the database:To change an item already in the database
+2020-02-14 10:30:46 INFO  Action:30 - To remove an item from the database:To remove an item from the database
+2020-02-14 10:30:46 INFO  Action:30 - To return to domain selection:To return to domain selection
+2020-02-14 10:30:50 INFO  CustomerController:28 - Please enter your firstname
+2020-02-14 10:30:54 INFO  CustomerController:30 - Please enter your surname
+2020-02-14 10:30:59 INFO  CustomerController:33 - Customer created
