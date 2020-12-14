@@ -32,7 +32,7 @@ Install Eclipse -Ensure that when java is being installed you download both jdk 
 Junit is the open source framework and a build tool used for unit testing of methods of classes.The is done to check if each code unit passes a test. For this, download the Junit plugin or dependency and place it in you pom file. It can be found here:To run such a test a Junit plugin is downloaded from https:0//mvnrepository.com/artifact/junit/junit. Create a test class to perform the unit testing
 Versioning We use SemVer for versioning.
 ##Authors
-* **Christopher Perrins** - *Initial work* - [christophperrins](https://github.com/Hassan7640/InventoryManagementApplication.git)
+* **Christopher Perrins** - *Initial work* - [christophperrins](https://github.com/christophperrins)
 * **Hassan Njie** - *Main body of work*- [Hassan7640](https://github.com/Hassan7640/InventoryManagementApplication.git)
 ## License
 This project is licensed under the MIT license - see the LICENSE.md file for details
