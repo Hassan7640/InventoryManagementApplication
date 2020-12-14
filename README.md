@@ -1,6 +1,7 @@
 # QA Consulting Individual Project-Inventory Management Application 
 This project is to create an application for an inventory management managament system that an end user can interact with via Command line interface. The will allow the users to execute CRUD (CREATE, READ, UPDATE and DELETE) functions with customers, items, orders and orderitems
-##Software Packages required
+
+#Software Packages required
 ```
 To create this system
 - Dowload an integrated development environment. The one used for this project is Eclipse - (https://www3.ntu.edu.sg/home/ehchua/programming/howto/EclipseJava_HowTo.html)
